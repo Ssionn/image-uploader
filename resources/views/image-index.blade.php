@@ -57,8 +57,13 @@
             <h1 class="text-4xl font-bold text-center">All Images Uploaded</h1>
             <div class="mt-12 mb-10 flex justify-center flex-col items-center">
                 @foreach ($actualImages as $actualImage)
-                    <img src="{{ $actualImage['path'] }}" alt="image" class="w-1/3 h-1/3">
-                    <h1 class="font-bold mt-2">{{ $actualImage['filename'] }}</h1>
+                    @if (in_array($actualImage['extension'], ['mp4', 'webm', 'ogg', 'mov']))
+                        <iframe src="{{ $actualImage['path'] }}" width="500" height="300" controls></iframe>
+                        <h1 class="font-bold mt-2">{{ $actualImage['filename'] }}</h1>
+                    @else
+                        <img src="{{ $actualImage['path'] }}" alt="image" class="w-1/3 h-1/3">
+                        <h1 class="font-bold mt-2">{{ $actualImage['filename'] }}</h1>
+                    @endif
                 @endforeach
             </div>
         </div>

@@ -29,6 +29,7 @@ class ImageRepository
                 'folder' => $image->folder,
                 'filename' => $image->filename,
                 'path' => asset('storage/avatars/tmp/' . $image->folder . '/' . $image->filename),
+                'extension' => pathinfo($image->filename, PATHINFO_EXTENSION),
             ];
         }
 
