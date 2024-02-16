@@ -42,6 +42,13 @@ Run this to activate TailwindCSS
 npm run dev
 ```
 
+# Storage
+
+Don't forget to link storage before uploading any pictures
+```
+php artisan storage:link
+```
+
 ## Apache not working?
 
 Well it's not going to run on xampp. Use the built-in php server instead...
@@ -52,18 +59,11 @@ php -S localhost:8000 -t public/
 ⚠️ RUN THIS NEXT TO NPM RUN DEV
 
 
-## Herd
+Mac / Herd
 
 If you don't want to use the built-in server, you can go for [Laravel Herd](https://herd.laravel.com/).
 You then visit
 
 ```
 {YourProjectName}.test/
-```
-
-# Storage
-
-Don't forget to link storage
-```
-php artisan storage:link
 ```
